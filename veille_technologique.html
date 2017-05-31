@@ -173,6 +173,23 @@
  var cache="15"; // gestion du cache exprimée en minutes - en fonction de la fréquence de mise à jour 
   document.write('<s'+'cript language="JavaScript" type="text/javascript" SRC="http://www.actifpub.com/rss.php?fichier_AP_='+fichier+'&limite_AP_='+limite+'&limite1_AP_='+limite1+'&aspect_AP_='+aspect+'&minute_AP_='+minute+'&sujet_AP_='+sujet+'&te_AP_='+te+'&fil_textsize_AP_='+fil_textsize+'&title_textcolor_AP_='+title_textcolor+'&text_textcolor_AP_='+text_textcolor+'&frame_color_AP_='+frame_color+'&content_AP_='+content+'&cache_AP_='+cache+'&extract_AP_='+extract+'&tlien_AP_='+tlien+'&java=1&member_AP_='+member+'"></sc'+'ript>'); 
   </script>  
+  
+  <script>
+  function parseRSS(url, container) {
+  $.ajax({
+    url: document.location.protocol + '//ajax.googleapis.com/ajax/services/feed/load?v=1.0&num=10&callback=?&q=' + encodeURIComponent(http://www.itpronews.fr/category/securite/feed),
+    dataType: 'json',
+    success: function(data) {
+      //console.log(data.responseData.feed);
+      $(container).html('<h2>'+capitaliseFirstLetter(data.responseData.feed.title)+'</h2>');
+
+      $.each(data.responseData.feed.entries, function(key, value){
+        var thehtml = '<h3><a href="'+value.link+'" target="_blank">'+value.title+'</a></h3>';
+        $(container).append(thehtml);
+      });
+    }
+  });
+}</script>
 							</section>
 
 					</div>
