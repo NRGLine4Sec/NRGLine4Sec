@@ -8,4 +8,60 @@
 N'afficher que les <input type="text" name="nb_items" value="" size="2" maxlength="2" /> premiers items du flux (laisser vide pour afficher le flux complet)<br />
 URL du flux RSS : <input type="text" name="url" value="http://www.01net.com/rss/actualites/securite/" size="50" />&nbsp;<input type="submit" value="Voir le flux RSS" />
 </form>
+
+<script type='text/javascript' src="http://www.lamoooche.com/jscript/trans/dateFormat.js"></script>	
+<script language="javascript">
+	var idnews = 501788;
+	var nodesc = 0;
+	var nbItemsMax = 5;
+	var nohead = 0;
+	var nodate = 0;
+	var modeScript = 'JS';
+	var bg_color = 'FFFFFF';
+	var title_color = '000080';
+	var text_color = '000000';
+	var size = 10;
+	var format_date = 'd-m-Y';
+	var date_color = 'FF0000';
+	var text_encoding = 'UTF-8';
+	var user = 'tiers';
+	
+//generation dynamique de la feuille de style css
+var css ='';
+css = css+'<style type="text/css">';
+// Gestion du titre de la news. 
+css = css+'.item-title {';
+css = css+'font-size:'+size+'pt;}';
+// Gestion des liens des titres 
+css = css+'div.item-title a:link, div.item-title a:visited, div.item-title a:active, div.item-title a:hover{';
+css = css+'color:'+title_color+';';
+css = css+'text-decoration : none ;}';
+// Classe associée à la table des news. 
+css = css+'table.items {';
+css = css+'background-color:'+bg_color+';';
+css = css+'width:50%;}';
+// Gestion de la date. 
+css = css+'div.item-date {';
+css = css+'color:'+date_color+';}';
+// Gestion de la description de l article 
+css = css+'div.item-desc  {';
+css = css+'color:'+text_color+';}';
+css = css+'</style>';
+document.write(css);
+	
+document.write('<script language="JavaScript" type="text/javascript" src="http://www.lamoooche.com/jscript/trans/RSSparser.php?idnews='+idnews
+	+ '&nbItemsMax=' + nbItemsMax
+	+ '&nohead=' + nohead
+	+ '&nodesc=' + nodesc
+	+ '&nodate=' + nodate
+	+ '&bg_color=' + bg_color
+	+ '&title_color=' + title_color
+	+ '&text_color=' + text_color
+	+ '&size=' + size
+	+ '&modeScript=' + modeScript
+	+'&format_date=' + format_date
+	+'&user=' + user
+	+'&text_encoding=' + text_encoding
+	+'"></sc'+'ript>');
+</script></font>
 </html>
