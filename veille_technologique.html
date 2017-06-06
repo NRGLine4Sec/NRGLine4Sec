@@ -67,11 +67,7 @@
 								<hr />
 								<script type="text/javascript" src="http://output55.rssinclude.com/output?type=js&amp;id=1142318&amp;hash=19088bb607098df7684946e590fe708d"></script> <!-- https://twitter.com/hashtag/InfoSec -->
 								<hr />
-								<script type="text/javascript" src="http://output32.rssinclude.com/output?type=js&amp;id=1142319&amp;hash=ac4d57b6d0dedb3f621e225e7cb37493"></script> <!-- https://korben.info/feed -->
-								<hr />
-								<script type="text/javascript" src="http://output83.rssinclude.com/output?type=js&amp;id=1142320&amp;hash=ccbc046f47ce215c6af33943461bb8ab"></script> <!-- https://www.undernews.fr/feed -->
 								</div>
-								<hr />
 
 								<!-- DEBUT CODE MISE EN PAGE XML PAR ACTIFPUB V2 -->      
   <p><SCRIPT language="Javascript" charset="utf-8"> 
@@ -199,24 +195,7 @@
   document.write('<s'+'cript language="JavaScript" type="text/javascript" SRC="http://www.actifpub.com/rss.php?fichier_AP_='+fichier+'&limite_AP_='+limite+'&limite1_AP_='+limite1+'&aspect_AP_='+aspect+'&minute_AP_='+minute+'&sujet_AP_='+sujet+'&te_AP_='+te+'&fil_textsize_AP_='+fil_textsize+'&title_textcolor_AP_='+title_textcolor+'&text_textcolor_AP_='+text_textcolor+'&frame_color_AP_='+frame_color+'&content_AP_='+content+'&cache_AP_='+cache+'&extract_AP_='+extract+'&tlien_AP_='+tlien+'&java=1&member_AP_='+member+'"></sc'+'ript>'); 
   </script>  
   
-  <script>
-  //function parseRSS(url, container) {
-  $.ajax({
-    url: document.location.protocol + '//ajax.googleapis.com/ajax/services/feed/load?v=1.0&num=10&callback=?&q=' + encodeURIComponent(http://www.itpronews.fr/category/securite/feed),
-    dataType: 'json',
-    success: function(data) {
-      //console.log(data.responseData.feed);
-      $(container).html('<h2>'+capitaliseFirstLetter(data.responseData.feed.title)+'</h2>');
 
-      $.each(data.responseData.feed.entries, function(key, value){
-        var thehtml = '<h3><a href="'+value.link+'" target="_blank">'+value.title+'</a></h3>';
-        $(container).append(thehtml);
-      });
-    }
-  });
-}</script>
-
-document.write('<script language="JavaScript" type="text/javascript" SRC="http://www.feedforall.com/rss2html.php?XMLFILE=https://www.ssi.gouv.fr/feed/actualite/&TEMPLATE=http://www.feedforall.com/rss2html/2011.htm"></script>'); 
 							</section>
 
 					</div>
