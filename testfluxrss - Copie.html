@@ -64,4 +64,40 @@ document.write('<script language="JavaScript" type="text/javascript" src="http:/
 	+'&text_encoding=' + text_encoding
 	+'"></sc'+'ript>');
 </script></font>
+
+
+
+
+
+<p>test google feed</p>
+<script type="text/javascript" src="https://www.google.com/jsapi"></script>
+    <script type="text/javascript">
+
+    google.load("feeds", "1");
+
+    function initialize() {
+      // Mettez l'URL de votre flux RSS
+      var feed = new google.feeds.Feed("http://www.itpronews.fr/category/securite/feed");
+      // Ici nous n'affichons que les deux premiers articles du flux RSS
+      feed.setNumEntries(2);
+      
+      feed.load(function(result) {
+        if (!result.error) {
+          // Remplacer au besoin le nom de l'élément "feed-actus" par celui que vous utilisez
+          var container = document.getElementById("feed-actus");
+          var rssoutput="";
+          for (var i = 0; i < result.feed.entries.length; i++) {
+            var entry = result.feed.entries[i];
+            // Pour chaque article du flux RSS, nous affichons un lien avec la date en italique
+            rssoutput+="<a href='" + entry.link + "'>" + entry.title + "</a> <i>(" + new Date(entry.publishedDate).toLocaleDateString() + ")<i/>
+";
+			
+          }
+          container.innerHTML=rssoutput;
+        }
+      });
+    }
+    google.setOnLoadCallback(initialize);
+
+    </script>
 </html>
